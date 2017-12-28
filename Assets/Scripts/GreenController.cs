@@ -17,30 +17,23 @@ public class GreenController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        X = Input.mousePosition.x;
-        Y = Input.mousePosition.y;
-        Vector3 mouselocation = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
             if (hit.collider.gameObject == myGameObject)
             {
-                /*Vector3 pos = Input.mousePosition;
-                pos.z = transform.position.z - Camera.main.transform.position.z;
-                transform.position = Camera.main.ScreenToWorldPoint(pos);*/
                 if (!animPlayed)
                 {
                     animPlayed = true;
                     animator.Play("mouseOver");
                     if (gameObject.CompareTag("1"))
-                        FindObjectOfType<AudioManager>().Play("ding1");
+                        AudioManager.Instance.Play("ding1");
                     else if (gameObject.CompareTag("2"))
-                        FindObjectOfType<AudioManager>().Play("ding2");
+                        AudioManager.Instance.Play("ding2");
                     else if (gameObject.CompareTag("3"))
-                        FindObjectOfType<AudioManager>().Play("ding3");
+                        AudioManager.Instance.Play("ding3");
                     else if (gameObject.CompareTag("4"))
-                        FindObjectOfType<AudioManager>().Play("ding4");
+                        AudioManager.Instance.Play("ding4");                   
                 }
             }
             else
