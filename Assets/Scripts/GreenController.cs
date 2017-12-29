@@ -2,38 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GreenController : MonoBehaviour {
-    public Vector3 UltimatePosition = new Vector3(0, 0, 0);
+public class GreenController : MonoBehaviour 
+{
     GameObject myGameObject;
     Animator animator;
     bool animPlayed;
-    float X, Y;
+    public GameObject closestOrange;
+    Vector3 offset = new Vector3(0, 0, -1);
 
     // Use this for initialization
     void Start () {
-        myGameObject = this.gameObject;
         animator = this.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        Vector3 pos = Input.mousePosition;
+        pos.z = transform.position.z - Camera.main.transform.position.z;
+
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
-            if (hit.collider.gameObject == myGameObject)
+            if (hit.collider.gameObject == gameObject)
             {
                 if (!animPlayed)
                 {
                     animPlayed = true;
                     animator.Play("mouseOver");
-                    if (gameObject.CompareTag("1"))
-                        AudioManager.Instance.Play("ding1");
-                    else if (gameObject.CompareTag("2"))
-                        AudioManager.Instance.Play("ding2");
-                    else if (gameObject.CompareTag("3"))
-                        AudioManager.Instance.Play("ding3");
-                    else if (gameObject.CompareTag("4"))
-                        AudioManager.Instance.Play("ding4");                   
+                    AudioManager.Instance.Play(gameObject.tag);                   
+                }
+
+                if (Input.GetMouseButton(0))
+                {
+                    transform.position = Camera.main.ScreenToWorldPoint(pos);
+                    closestOrange = GameManager.Instance.CheckDistance(gameObject);                    
+                }
+                else
+                {
+                    transform.position = closestOrange.transform.position + offset;
                 }
             }
             else
