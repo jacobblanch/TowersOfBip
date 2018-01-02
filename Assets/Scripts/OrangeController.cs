@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class OrangeController : MonoBehaviour
 {
-    GameObject myGameObject;
     Animator animator;
     bool animPlayed;
 
     // Use this for initialization
     void Start()
     {
-        myGameObject = this.gameObject;
         animator = this.GetComponent<Animator>();
     }
 
@@ -21,13 +19,13 @@ public class OrangeController : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
-            if (hit.collider.gameObject == myGameObject)
+            if (hit.collider.gameObject == gameObject)
             {
                 if (!animPlayed)
                 {
                     animPlayed = true;
                     animator.Play("mouseOverOrange");
-                    AudioManager.Instance.Play(myGameObject.tag);
+                    AudioManager.Instance.Play(gameObject.tag);
                 }
             }
             else

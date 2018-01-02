@@ -9,6 +9,7 @@ public class GreenController : MonoBehaviour
     bool animPlayed;
     public GameObject closestOrange;
     Vector3 offset = new Vector3(0, 0, -1);
+    bool locked;
 
     // Use this for initialization
     void Start () {
@@ -30,20 +31,28 @@ public class GreenController : MonoBehaviour
                 {
                     animPlayed = true;
                     animator.Play("mouseOver");
-                    AudioManager.Instance.Play(gameObject.tag);                   
+                    AudioManager.Instance.Play(gameObject.tag);
                 }
 
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButtonDown(0))
                 {
-                    transform.position = Camera.main.ScreenToWorldPoint(pos);
-                    closestOrange = GameManager.Instance.CheckDistance(gameObject);                    
-                }
-                else
-                {
-                    transform.position = closestOrange.transform.position + offset;
+                    //set greendude to lock onto mouse pos
+                    if (locked)
+                    {                        
+                        transform.position = closestOrange.transform.position + offset;
+                        locked = false;
+                    }
+                    else
+                        locked = true;
                 }
             }
             else
                 animPlayed = false;
-	}
+
+        if (locked)
+        {
+            transform.position = Camera.main.ScreenToWorldPoint(pos);
+            closestOrange = GameManager.Instance.CheckDistance(gameObject);
+        }
+    }
 }
