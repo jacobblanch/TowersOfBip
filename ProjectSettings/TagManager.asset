@@ -8,6 +8,9 @@ TagManager:
   - ding2
   - ding3
   - ding4
+  - Set1
+  - Set2
+  - Set3
   layers:
   - Default
   - TransparentFX

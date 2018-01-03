@@ -3,11 +3,13 @@
 public class GameManager : MonoBehaviour {
 
     public static GameManager Instance { get; private set; }
-    public GameObject[] oranges;
-    public GameObject closestOrange;
-    public Color c1 = Color.yellow;
-    public Color c2 = Color.red;
-    LineRenderer lineRenderer;
+    public GameObject[] sets;
+    public GameObject closestSet;
+    public GameObject selectedOrange;
+
+    //public Color c1 = Color.yellow;
+    //public Color c2 = Color.red;
+    //LineRenderer lineRenderer;
 
     void Awake()
     {
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    private void Start()
+    /*private void Start()
     {
         lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
@@ -35,25 +37,25 @@ public class GameManager : MonoBehaviour {
             new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
             );
         lineRenderer.colorGradient = gradient;
-    }
+    }*/
 
     public GameObject CheckDistance(GameObject green)
     {
-        foreach (GameObject orange in oranges)
+        foreach (GameObject set in sets)
         {
-            if (Vector3.Distance(green.transform.position, orange.transform.position) < Vector3.Distance(green.transform.position, closestOrange.transform.position))
+            if (Vector3.Distance(green.transform.position, set.transform.position) < Vector3.Distance(green.transform.position, closestSet.transform.position))
             {
-                closestOrange = orange;
+                closestSet = set;
+                foreach (Transform orange in closestSet.transform)
+                {
+                    if (orange.CompareTag(green.tag))
+                        selectedOrange = orange.gameObject;
+                }
             }
         }
-        if (closestOrange == null)
+        if (selectedOrange == null)
             return null;
         else
-        {
-            lineRenderer.SetPosition(0, green.transform.position);
-            lineRenderer.SetPosition(1, closestOrange.transform.position);
-            return closestOrange;
-        }
-            
+            return selectedOrange;            
     }
 }
