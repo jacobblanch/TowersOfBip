@@ -36,12 +36,13 @@ public class GreenController : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    //set greendude to lock onto mouse pos
+                    //if greendude is locked, unlock him and set his pos to the empty space
                     if (locked)
                     {                        
                         transform.position = closestOrange.transform.position + offset;
                         locked = false;
                     }
+                    //else lock him to mouse cursor
                     else
                         locked = true;
                 }
@@ -49,6 +50,7 @@ public class GreenController : MonoBehaviour
             else
                 animPlayed = false;
 
+        //if the greendude is set to be locked to the mouse cursor then lockhim to the mouse cursor and check for the closest orange space while he is locked
         if (locked)
         {
             transform.position = Camera.main.ScreenToWorldPoint(pos);

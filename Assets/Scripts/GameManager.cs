@@ -49,7 +49,17 @@ public class GameManager : MonoBehaviour {
                 foreach (Transform orange in closestSet.transform)
                 {
                     if (orange.CompareTag(green.tag))
-                        selectedOrange = orange.gameObject;
+                    {
+                        if (Physics.Raycast(transform.position, transform.up))
+                        {
+                            Debug.Log("Green above you!");
+                            return null;
+                        }
+                        else
+                            selectedOrange = orange.gameObject;
+
+                    }
+                        
                 }
             }
         }

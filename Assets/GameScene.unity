@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 58376491}
   - component: {fileID: 58376493}
   - component: {fileID: 58376492}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s2p2
   m_TagString: ding2
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 564498412}
   - component: {fileID: 564498416}
   - component: {fileID: 564498415}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s3p3
   m_TagString: ding3
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 617098841}
   - component: {fileID: 617098843}
   - component: {fileID: 617098842}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s2p1
   m_TagString: ding1
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 624182573}
   - component: {fileID: 624182577}
   - component: {fileID: 624182576}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s3p1
   m_TagString: ding1
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 1075234967}
   - component: {fileID: 1075234971}
   - component: {fileID: 1075234970}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s3p2
   m_TagString: ding2
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 1093379678}
   - component: {fileID: 1093379680}
   - component: {fileID: 1093379679}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s2p3
   m_TagString: ding3
   m_Icon: {fileID: 0}
@@ -1008,7 +1008,7 @@ GameObject:
   - component: {fileID: 1245992070}
   - component: {fileID: 1245992074}
   - component: {fileID: 1245992072}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s1p1
   m_TagString: ding1
   m_Icon: {fileID: 0}
@@ -1092,7 +1092,7 @@ GameObject:
   - component: {fileID: 1473688592}
   - component: {fileID: 1473688596}
   - component: {fileID: 1473688595}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s3p4
   m_TagString: ding4
   m_Icon: {fileID: 0}
@@ -1212,7 +1212,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.99, y: 0.585, z: 0.2}
+  m_Size: {x: 4.99, y: 0.585, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1560295168
 MonoBehaviour:
@@ -1291,7 +1291,7 @@ GameObject:
   - component: {fileID: 1653574353}
   - component: {fileID: 1653574357}
   - component: {fileID: 1653574356}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s1p4
   m_TagString: ding4
   m_Icon: {fileID: 0}
@@ -1411,7 +1411,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.99, y: 0.585, z: 0.2}
+  m_Size: {x: 4.99, y: 0.585, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1694901886
 MonoBehaviour:
@@ -1490,7 +1490,7 @@ GameObject:
   - component: {fileID: 1734445958}
   - component: {fileID: 1734445960}
   - component: {fileID: 1734445959}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s2p4
   m_TagString: ding4
   m_Icon: {fileID: 0}
@@ -1610,7 +1610,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.99, y: 0.585, z: 0.2}
+  m_Size: {x: 4.99, y: 0.585, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1762886076
 MonoBehaviour:
@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 1845779055}
   - component: {fileID: 1845779054}
   - component: {fileID: 1845779053}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s1p2
   m_TagString: ding2
   m_Icon: {fileID: 0}
@@ -1792,7 +1792,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.99, y: 0.585, z: 0.2}
+  m_Size: {x: 4.99, y: 0.585, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1870072217
 MonoBehaviour:
@@ -1888,7 +1888,7 @@ GameObject:
   - component: {fileID: 2138844489}
   - component: {fileID: 2138844488}
   - component: {fileID: 2138844487}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: s1p3
   m_TagString: ding3
   m_Icon: {fileID: 0}
