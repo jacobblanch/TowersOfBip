@@ -50,12 +50,12 @@ public class GameManager : MonoBehaviour {
                 {
                     if (orange.CompareTag(green.tag))
                     {
-                        if (Physics.Raycast(transform.position, transform.up))
+                        /*if (Physics.Raycast(transform.position, transform.up))
                         {
                             Debug.Log("Green above you!");
                             return null;
                         }
-                        else
+                        else*/
                             selectedOrange = orange.gameObject;
 
                     }

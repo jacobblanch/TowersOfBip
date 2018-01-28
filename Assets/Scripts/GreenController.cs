@@ -40,11 +40,16 @@ public class GreenController : MonoBehaviour
                     if (locked)
                     {                        
                         transform.position = closestOrange.transform.position + offset;
+                        animPlayed = false;
                         locked = false;
                     }
                     //else lock him to mouse cursor
                     else
+                    {
                         locked = true;
+                        animPlayed = true;
+                        AudioManager.Instance.Play("Pickup");
+                    }
                 }
             }
             else

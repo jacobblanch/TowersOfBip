@@ -327,6 +327,12 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+  - source: {fileID: 0}
+    name: Pickup
+    clip: {fileID: 8300000, guid: f6feed3e55d4ad140a7fb3686d19b8a7, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
 --- !u!1 &153027998
 GameObject:
   m_ObjectHideFlags: 0
