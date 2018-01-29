@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class GreenController : MonoBehaviour 
 {
-    GameObject myGameObject;
     Animator animator;
-    bool animPlayed;
+
+    public bool animPlayed;
+
     public GameObject closestOrange;
+
     Vector3 offset = new Vector3(0, 0, -1);
-    bool locked;
+
+    public bool locked;
+
+    bool selected;
+
+    public List<GameObject> greens = new List<GameObject>();
 
     // Use this for initialization
     void Start () {
         animator = this.GetComponent<Animator>();
+        GameObject[] objs = FindObjectsOfType<GameObject>();
+        foreach(GameObject obj in objs)
+        {
+            if (obj.GetComponent<GreenController>() != null)
+            {
+                greens.Add(obj);
+            }
+        }
 	}
 	
 	// Update is called once per frame
@@ -36,30 +51,49 @@ public class GreenController : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
+                    if (!selected)
+                        if (Physics.Raycast(ray, out hit))
+                            if (hit.collider.gameObject == gameObject)
+                             selected = true;
                     //if greendude is locked, unlock him and set his pos to the empty space
                     if (locked)
                     {                        
-                        transform.position = closestOrange.transform.position + offset;
-                        animPlayed = false;
-                        locked = false;
+                        //transform.position = closestOrange.transform.position + offset;
+                        for (int i = 0; i < greens.Count; i++)
+                        {
+                            greens[i].GetComponent<GreenController>().locked = false;
+                        }
                     }
                     //else lock him to mouse cursor
                     else
                     {
-                        locked = true;
-                        animPlayed = true;
+                        for (int i = 0; i < greens.Count; i++)
+                        {
+                            greens[i].GetComponent<GreenController>().locked = true;
+                            greens[i].GetComponent<GreenController>().animPlayed = true;
+                        }
                         AudioManager.Instance.Play("Pickup");
                     }
+                } else if (Input.GetMouseButtonUp(0))
+                {
+                    if (selected)
+                    {
+                        selected = false;
+                        for (int i = 0; i < greens.Count; i++)
+                            greens[i].GetComponent<GreenController>().animPlayed = false;
+                    }
                 }
-            }
-            else
+            } else if (!locked)
                 animPlayed = false;
 
         //if the greendude is set to be locked to the mouse cursor then lockhim to the mouse cursor and check for the closest orange space while he is locked
-        if (locked)
+        if (selected)
         {
             transform.position = Camera.main.ScreenToWorldPoint(pos);
             closestOrange = GameManager.Instance.CheckDistance(gameObject);
+        } else
+        {
+            transform.position = closestOrange.transform.position + offset;
         }
     }
 }

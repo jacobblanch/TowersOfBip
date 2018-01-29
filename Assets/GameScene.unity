@@ -378,7 +378,12 @@ MonoBehaviour:
   - {fileID: 1051318038}
   - {fileID: 56381912}
   closestSet: {fileID: 1051318038}
-  selectedOrange: {fileID: 0}
+  selectedOrange: {fileID: 617098840}
+  greens:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &564498411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,8 +1187,8 @@ GameObject:
   - component: {fileID: 1560295170}
   - component: {fileID: 1560295169}
   - component: {fileID: 1560295168}
-  - component: {fileID: 1560295167}
   - component: {fileID: 1560295166}
+  - component: {fileID: 1560295167}
   m_Layer: 0
   m_Name: green2
   m_TagString: ding2
@@ -1218,7 +1223,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.99, y: 0.585, z: 5}
+  m_Size: {x: 4.9899993, y: 0.585, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1560295168
 MonoBehaviour:
@@ -1232,6 +1237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closestOrange: {fileID: 58376490}
+  locked: 0
+  greens: []
 --- !u!212 &1560295169
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1381,8 +1388,8 @@ GameObject:
   - component: {fileID: 1694901888}
   - component: {fileID: 1694901887}
   - component: {fileID: 1694901886}
-  - component: {fileID: 1694901885}
   - component: {fileID: 1694901884}
+  - component: {fileID: 1694901885}
   m_Layer: 0
   m_Name: green3
   m_TagString: ding3
@@ -1417,7 +1424,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.99, y: 0.585, z: 5}
+  m_Size: {x: 4.99, y: 0.585, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1694901886
 MonoBehaviour:
@@ -1431,6 +1438,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closestOrange: {fileID: 1093379677}
+  locked: 0
+  greens: []
 --- !u!212 &1694901887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1580,8 +1589,8 @@ GameObject:
   - component: {fileID: 1762886078}
   - component: {fileID: 1762886077}
   - component: {fileID: 1762886076}
-  - component: {fileID: 1762886075}
   - component: {fileID: 1762886074}
+  - component: {fileID: 1762886075}
   m_Layer: 0
   m_Name: green1
   m_TagString: ding1
@@ -1616,7 +1625,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.99, y: 0.585, z: 5}
+  m_Size: {x: 4.99, y: 0.585, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1762886076
 MonoBehaviour:
@@ -1630,6 +1639,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closestOrange: {fileID: 617098840}
+  locked: 0
+  greens: []
 --- !u!212 &1762886077
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1779,8 +1790,8 @@ GameObject:
   - component: {fileID: 1870072219}
   - component: {fileID: 1870072218}
   - component: {fileID: 1870072217}
-  - component: {fileID: 1870072216}
   - component: {fileID: 1870072220}
+  - component: {fileID: 1870072216}
   m_Layer: 0
   m_Name: green4
   m_TagString: ding4
@@ -1798,7 +1809,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.99, y: 0.585, z: 5}
+  m_Size: {x: 4.99, y: 0.585, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1870072217
 MonoBehaviour:
@@ -1812,6 +1823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closestOrange: {fileID: 1734445957}
+  locked: 0
+  greens: []
 --- !u!212 &1870072218
 SpriteRenderer:
   m_ObjectHideFlags: 0

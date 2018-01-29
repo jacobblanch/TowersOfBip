@@ -3,9 +3,14 @@
 public class GameManager : MonoBehaviour {
 
     public static GameManager Instance { get; private set; }
+
     public GameObject[] sets;
+
     public GameObject closestSet;
+
     public GameObject selectedOrange;
+
+    public GameObject[] greens;
 
     //public Color c1 = Color.yellow;
     //public Color c2 = Color.red;
@@ -24,9 +29,9 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    /*private void Start()
+        private void Start()
     {
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        /*lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
         lineRenderer.widthMultiplier = 0.2f;
 
@@ -36,8 +41,13 @@ public class GameManager : MonoBehaviour {
             new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c2, 1.0f) },
             new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
             );
-        lineRenderer.colorGradient = gradient;
-    }*/
+        lineRenderer.colorGradient = gradient;*/
+    }
+
+    public void Update()
+    {
+        
+    }
 
     public GameObject CheckDistance(GameObject green)
     {
@@ -50,12 +60,12 @@ public class GameManager : MonoBehaviour {
                 {
                     if (orange.CompareTag(green.tag))
                     {
-                        /*if (Physics.Raycast(transform.position, transform.up))
+                        if (Physics.Raycast(transform.position, transform.up, 20f))
                         {
                             Debug.Log("Green above you!");
                             return null;
                         }
-                        else*/
+                        else
                             selectedOrange = orange.gameObject;
 
                     }
